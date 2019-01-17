@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    image: appscode/gearmand:0.5.2
+    command: run --v=3 --storage-dir=/my-dir --addr="0.0.0.0:4730"
+    volumes:
+    - "./db:/my-dir"
+    ports:
+    - "4730:4730"
+    - "3000:3000"
+  client:
+    build:
+     context: ./client
+  worker:
+    build:
+     context: ./worker
