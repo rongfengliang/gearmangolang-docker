@@ -8,7 +8,7 @@ with docker-compose build
 
 [nodejs-client](./nodejs/client/index.js)
 
-[nodejs-worker](./nodejs/worker/index.js) (`some wrong can't work`)
+[nodejs-worker](./nodejs/worker/index.js) (`some wrong can't work because golang   version some implementation`)
 
 [golang-admin](./admin/main.go)
 
