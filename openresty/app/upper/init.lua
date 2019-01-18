@@ -1,6 +1,6 @@
 local gearman = require "resty.gearman"
+local gm = gearman:new()
 function init()
-    local gm = gearman:new()
     gm:set_timeout(1000) -- 1 sec
     local ok, err = gm:connect("app", 4730)
     if not ok then
@@ -16,6 +16,20 @@ function init()
     else
         ngx.say(ok)
     end
+    -- put it into the connection pool of size 100,
+            -- with 0 idle timeout
+    -- local ok, err = gm:set_keepalive(0, 100)
+    --     if not ok then
+    --         ngx.say("failed to set keepalive: ", err)
+    --         return
+    --     end
+
+            -- or just close the connection right away:
+    local ok, err = gm:close()
+        if not ok then
+          ngx.say("failed to close: ", err)
+          return
+        end
 end
 
 return init;
