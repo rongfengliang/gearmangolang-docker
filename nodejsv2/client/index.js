@@ -1,14 +1,8 @@
-var gearmanode = require('gearmanode');
-var client = gearmanode.client({
-	host:"app",
-	port: 4730
-});
+var Gearman = require('abraxas');
+var client = Gearman.Client.connect({ servers: ['demo:4730'], defaultEncoding:'utf8' });
 
-var job = client.submitJob('reverse', 'hello world!');
-job.on('workData', function(data) {
-    console.log('WORK_DATA >>> ' + data);
-});
-job.on('complete', function() {
-    console.log('RESULT >>> ' + job.response);
-    client.close();
+// When submitting jobs you can use traditional Node style callbacks
+client.submitJob('dalongupper', 'test string', function(error, result) {
+    if (error) console.error(error);
+    console.log("Upper:", result);
 });

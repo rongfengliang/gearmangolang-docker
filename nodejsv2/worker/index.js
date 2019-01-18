@@ -1,7 +1,6 @@
-var gearmanode = require('gearmanode');
-var worker = gearmanode.worker();
+var Gearman = require('abraxas');
+var client = Gearman.Client.connect({ servers: ['demo:4730'], defaultEncoding:'utf8' });
 
-worker.addFunction('reverse', function (job) {
-    job.sendWorkData(job.payload); // mirror input as partial result
-    job.workComplete(job.payload.toString().split("").reverse().join(""));
+client.registerWorker("dalongupper", function(task) {
+    return task.payload.toUpperCase();
 });

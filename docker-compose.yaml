@@ -37,3 +37,11 @@ services:
     image: dalongrong/nodejs-worker-demo
     build: 
       context: ./nodejs/worker
+  nodejsv2-client:
+    image: dalongrong/nodejsv2-client-demo
+    build: 
+      context: ./nodejsv2/client
+  nodejsv2-worker:
+    image: dalongrong/nodejsv2-worker-demo
+    build: 
+      context: ./nodejsv2/worker
