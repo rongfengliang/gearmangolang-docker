@@ -29,7 +29,11 @@ services:
     image: dalongrong/admin-demo
     build:
      context: ./admin
-  nodejs:
-    image: dalongrong/nodejs-demo
+  nodejs-client:
+    image: dalongrong/nodejs-client-demo
     build: 
-      context: ./nodejs
+      context: ./nodejs/client
+  nodejs-worker:
+    image: dalongrong/nodejs-worker-demo
+    build: 
+      context: ./nodejs/worker

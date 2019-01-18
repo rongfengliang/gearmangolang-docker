@@ -1,6 +1,6 @@
 const gearman = require('gearman')
 
-let client = gearman("app", 4730 , {timeout: 3000})  // timeout in milliseconds. 
+let client = gearman("127.0.0.1", 4730 , {timeout: 10000})  // timeout in milliseconds. 
 
 // handle timeout 
 client.on('timeout', function() {

@@ -6,7 +6,9 @@ with docker-compose build
 
 [golang-worker](./worker/worker.go)
 
-[nodejs-client](./nodejs/index.js)
+[nodejs-client](./nodejs/client/index.js)
+
+[nodejs-worker](./nodejs/worker/index.js) (`some wrong can't work`)
 
 [golang-admin](./admin/main.go)
 
