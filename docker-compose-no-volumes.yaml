@@ -9,6 +9,14 @@ services:
     image: redis
     ports:
     - "6379:6379"
+  nginx:
+   build: 
+     context: ./openresty
+   ports:
+   - "8080:80"
+   volumes:
+   - "./app/:/opt/app/"
+   - "./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf"
   app:
     image: appscode/gearmand:0.5.2
     command: run --v=3  --addr="0.0.0.0:4730"
