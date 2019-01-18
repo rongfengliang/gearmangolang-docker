@@ -13,3 +13,5 @@ with docker-compose build
 [golang-admin](./admin/main.go)
 
 [k8s-deploy](./k8s/README.md)
+
+[openresty](./openresty/nginx.conf)
