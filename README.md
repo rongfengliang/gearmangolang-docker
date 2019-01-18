@@ -15,3 +15,5 @@ with docker-compose build
 [k8s-deploy](./k8s/README.md)
 
 [openresty](./openresty/nginx.conf)
+
+[prometheus-demo](./prometheus/prometheus.yml)

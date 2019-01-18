@@ -9,6 +9,12 @@ services:
     image: redis
     ports:
     - "6379:6379"
+  prometheus:
+    image: prom/prometheus
+    volumes:
+    - "./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml"
+    ports:
+    - "9090:9090"
   app:
     image: appscode/gearmand:0.5.2
     command: run --v=3 --storage-dir=/my-dir --addr="0.0.0.0:4730"
