@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose-no-volumes.yaml -o ./k8s
+    kompose.version: 1.17.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: demo
+  name: demo
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: demo
+    spec:
+      containers:
+      - args:
+        - --queue-type=redis
+        - --redis-server=redis
+        - --redis-port=6379
+        - --verbose=DEBUG
+        image: artefactual/gearmand:latest
+        name: demo
+        ports:
+        - containerPort: 4730
+        resources: {}
+      restartPolicy: Always
+status: {}
