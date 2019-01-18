@@ -1,6 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
+  namespace: gearman
   annotations:
     kompose.cmd: kompose convert -f docker-compose-no-volumes.yaml -o ./k8s
     kompose.version: 1.17.0 ()
