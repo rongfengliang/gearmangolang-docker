@@ -1,5 +1,14 @@
 version: "3"
 services:
+  demo:
+    image: artefactual/gearmand:latest 
+    command: --queue-type=redis --redis-server=redis --redis-port=6379 --verbose=DEBUG
+    ports:
+    - "4731:4730"
+  redis:
+    image: redis
+    ports:
+    - "6379:6379"
   app:
     image: appscode/gearmand:0.5.2
     command: run --v=3 --storage-dir=/my-dir --addr="0.0.0.0:4730"
