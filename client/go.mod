@@ -1,4 +1,4 @@
-module github.com/rongfengliang/client-german
+module github.com/rongfengliang/client-gearman
 
 require (
 	github.com/appscode/g2 v0.0.0-20180815183056-bc8637c8e90f

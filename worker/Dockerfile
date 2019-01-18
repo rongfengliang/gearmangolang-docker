@@ -9,5 +9,5 @@ FROM alpine:latest
 LABEL EMAIL="1141519465@qq.com"
 LABEL AUTHOR="dalongrong"
 WORKDIR /app
-COPY --from=build /app/worker-german /usr/local/bin/worker-german
-ENTRYPOINT ["worker-german"]
+COPY --from=build /app/worker-gearman /usr/local/bin/worker-gearman
+ENTRYPOINT ["worker-gearman"]

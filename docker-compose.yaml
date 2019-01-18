@@ -25,3 +25,7 @@ services:
     image: dalongrong/worker-demo
     build:
      context: ./worker
+  admin:
+    image: dalongrong/admin-demo
+    build:
+     context: ./admin
