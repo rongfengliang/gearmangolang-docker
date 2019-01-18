@@ -1,6 +1,6 @@
 const gearman = require('gearman')
 
-let worker = gearman('app', 4730)
+let worker = gearman('127.0.0.2', 4731)
 
 // handle jobs assigned by the server
 worker.on('JOB_ASSIGN', function(job) {

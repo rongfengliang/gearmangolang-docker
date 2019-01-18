@@ -1,6 +1,6 @@
 const gearman = require('gearman')
 
-let client = gearman("127.0.0.1", 4730 , {timeout: 10000})  // timeout in milliseconds. 
+let client = gearman("127.0.0.1", 4731 , {timeout: 10000})  // timeout in milliseconds. 
 
 // handle timeout 
 client.on('timeout', function() {
@@ -18,5 +18,5 @@ client.on('WORK_COMPLETE', function(job) {
 // connect to the gearman server
 client.connect(function() {
 	// submit a job to uppercase a string with normal priority in the foreground
-	client.submitJob('ToUpper', 'Hello, World!')
+	client.submitJob('dalongupper', 'Hello, World!')
 })
