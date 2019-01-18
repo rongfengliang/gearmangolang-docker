@@ -10,5 +10,5 @@ LABEL EMAIL="1141519465@qq.com"
 LABEL AUTHOR="dalongrong"
 WORKDIR /app
 ENV PATH=$PATH:/usr/local/bin
-COPY --from=build /app/admin-gearmann /usr/local/bin/admin-gearman
+COPY --from=build /app/admin-gearman /usr/local/bin/admin-gearman
 ENTRYPOINT ["admin-gearman"]
